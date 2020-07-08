@@ -4,8 +4,6 @@ const app = express()
 
 const passport = require('passport')
 
-const cookieParser = require('cookie-parser')
-
 const session = require('express-session')
 
 const User = require('./models/User')
@@ -16,7 +14,6 @@ app.set("view engine","ejs")
 app.use(session({ secret: 'ilovescotchscotchyscotchscotch' }));
 app.use(passport.initialize());
     app.use(passport.session()); 
-    app.use(cookieParser());
 
 passport.use(new facebookStrategy({
 
